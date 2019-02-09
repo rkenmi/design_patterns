@@ -1,5 +1,5 @@
 from factory.Pizza import CheesePizza, VeggiePizza
-from factory.PizzaFactory import SimplePizzaFactory, DominosPizzaFactory
+from factory.PizzaFactory import SimplePizzaFactory, DominosPizzaFactory, RoundTablePizzaFactory
 
 
 class PizzaStore:
@@ -35,6 +35,11 @@ class PizzaStore:
 class DominosPizzaStore(PizzaStore):
     def __init__(self):
         super().__init__(DominosPizzaFactory())
+
+
+class RoundTablePizzaStore(PizzaStore):
+    def __init__(self):
+        super().__init__(RoundTablePizzaFactory())
 
 class PapaJohnsPizzaStore(PizzaStore):
 

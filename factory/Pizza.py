@@ -3,6 +3,7 @@ ONION_TOPPING = 3
 BELL_PEPPER_TOPPING = 4
 PEPPERONI_TOPPING = 5
 SAUSAGE_TOPPING = 6
+MEATBALL_TOPPING = 7
 
 class Pizza:
     def __init__(self, toppings=()):
@@ -24,3 +25,7 @@ class PepperoniPizza(Pizza):
 class CombinationPizza(Pizza):
     def __init__(self):
         super().__init__((CHEESE_TOPPING, PEPPERONI_TOPPING, ONION_TOPPING, BELL_PEPPER_TOPPING, SAUSAGE_TOPPING))
+
+class MeatballPizza(Pizza):
+    def __init__(self):
+        super().__init__((MEATBALL_TOPPING, CHEESE_TOPPING))

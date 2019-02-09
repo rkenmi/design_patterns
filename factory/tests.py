@@ -1,7 +1,8 @@
 import unittest
 
 from factory.Pizza import Pizza
-from factory.PizzaStore import DominosPizzaStore, PizzaStore, PapaJohnsPizzaStore, FactoryNotWorkingException
+from factory.PizzaStore import DominosPizzaStore, PizzaStore, PapaJohnsPizzaStore, FactoryNotWorkingException, \
+    RoundTablePizzaStore
 
 
 class MyTestCase(unittest.TestCase):
@@ -21,6 +22,9 @@ class MyTestCase(unittest.TestCase):
 
         my_pizza_store = DominosPizzaStore()
         self.assertIsInstance(my_pizza_store.order_pizza('pepperoni'), Pizza)
+
+        my_pizza_store = RoundTablePizzaStore()
+        self.assertIsInstance(my_pizza_store.order_pizza('meatball'), Pizza)
 
 if __name__ == '__main__':
     unittest.main()
