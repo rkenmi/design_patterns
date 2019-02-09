@@ -23,13 +23,14 @@ class PizzaStore:
             pizza = self._bake(pizza)
         except:
             print('invalid factory')
-        finally:
-            return pizza
+            raise FactoryNotWorkingException()
+
+        return pizza
 
     # quasi-Abstract factory method, implemented by subclasses
     # note that this class has no knowledge of the actual pizzas created
     def create_pizza(self, item):
-        raise NotImplementedError()
+        raise NotImplementedError
 
 class DominosPizzaStore(PizzaStore):
     def __init__(self):
@@ -43,3 +44,7 @@ class PapaJohnsPizzaStore(PizzaStore):
             return CheesePizza()
         elif item == 'veggie':
             return VeggiePizza()
+
+class FactoryNotWorkingException(Exception):
+    def __init__(self):
+        super().__init__()

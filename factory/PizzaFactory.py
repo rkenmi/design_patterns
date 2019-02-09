@@ -8,9 +8,9 @@ class SimplePizzaFactory:
     def create_pizza(self, type):
         pizza = None
 
-        if type == 'Cheese':
+        if type == 'cheese':
             pizza = CheesePizza()
-        elif type == 'Veggie':
+        elif type == 'veggie':
             pizza = VeggiePizza()
 
         return pizza
@@ -19,13 +19,13 @@ class DominosPizzaFactory:
     def create_pizza(self, type):
         pizza = None
 
-        if type == 'Cheese':
+        if type == 'cheese':
             pizza = CheesePizza()
-        elif type == 'Veggie':
+        elif type == 'veggie':
             pizza = VeggiePizza()
-        elif type == 'Pepperoni':
+        elif type == 'pepperoni':
             pizza = PepperoniPizza()
-        elif type == 'Combination':
+        elif type == 'combination':
             pizza = CombinationPizza()
 
         return pizza
