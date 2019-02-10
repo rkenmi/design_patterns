@@ -5,7 +5,7 @@ from factory.PizzaStore import DominosPizzaStore, PizzaStore, PapaJohnsPizzaStor
     RoundTablePizzaStore
 
 
-class MyTestCase(unittest.TestCase):
+class FactoryTest(unittest.TestCase):
     def test_factory_method(self):
         my_pizza_store = PizzaStore()
         with self.assertRaises(NotImplementedError):
