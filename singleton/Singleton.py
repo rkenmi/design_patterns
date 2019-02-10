@@ -2,6 +2,9 @@ from threading import Lock, Thread
 
 
 class SingletonObj(Thread):
+    """
+    The Singleton Pattern ensures a class has only one instance, and provides a global point of access to it.
+    """
     instance = None
 
     def __init__(self, *args, **kwargs):

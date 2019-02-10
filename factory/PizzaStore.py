@@ -5,6 +5,9 @@ from factory.PizzaFactory import SimplePizzaFactory, DominosPizzaFactory, RoundT
 class PizzaStore:
     def __init__(self, factory=None):
         if factory:
+            """
+                The Abstract Factory Pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+            """
             self._factory = factory
 
     def _bake(self, pizza):
@@ -27,8 +30,9 @@ class PizzaStore:
 
         return pizza
 
-    # quasi-Abstract factory method, implemented by subclasses
-    # note that this class has no knowledge of the actual pizzas created
+    """
+    The Factory Method Pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+    """
     def create_pizza(self, item):
         raise NotImplementedError
 
@@ -42,8 +46,6 @@ class RoundTablePizzaStore(PizzaStore):
         super().__init__(RoundTablePizzaFactory())
 
 class PapaJohnsPizzaStore(PizzaStore):
-
-    # Factory Method Pattern
     def create_pizza(self, item):
         if item == 'cheese':
             return CheesePizza()

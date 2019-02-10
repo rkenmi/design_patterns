@@ -1,5 +1,9 @@
-class RPGCharacter:
+"""
+The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+"""
 
+
+class RPGCharacter:
     def __init__(self, attack=None, magic=None, special=None, item=None):
         self.attack = attack
         self.magic = magic
