@@ -4,12 +4,11 @@ from factory.PizzaFactory import SimplePizzaFactory, DominosPizzaFactory, RoundT
 
 class PizzaStore:
     def __init__(self, factory=None):
-        if factory:
-            """
-                The Abstract Factory Pattern provides an interface for creating families of related or 
-                dependent objects without specifying their concrete classes.
-            """
-            self._factory = factory
+        """
+            The Abstract Factory Pattern provides an interface for creating families of related or
+            dependent objects without specifying their concrete classes.
+        """
+        self._factory = factory
 
     def _bake(self, pizza):
         print('Baked')
@@ -22,6 +21,7 @@ class PizzaStore:
     def order_pizza(self, type):
         pizza = None
         try:
+            # Abstract factory is used here. Note that this class does not know what specific factory this is.
             pizza = self._factory.create_pizza(type)
             pizza = self._prep(pizza)
             pizza = self._bake(pizza)
